@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Events & Tournaments</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #ff3366;
+            --bg: #07090e;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+        body { background-color: var(--bg); color: white; font-family: 'Vazirmatn', sans-serif; margin: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+        .nav-back { margin-bottom: 30px; }
+        .nav-back a { color: var(--primary); text-decoration: none; }
+
+        .event-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-right: 4px solid var(--primary);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-info h3 { margin: 0; color: var(--primary); font-size: 1.5rem; }
+        .event-info p { margin: 10px 0 0; color: #aaa; }
+        
+        .status-badge {
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-live { background: rgba(0, 242, 254, 0.2); color: var(--primary); border: 1px solid var(--primary); }
+        .status-upcoming { background: rgba(255, 51, 102, 0.2); color: var(--secondary); border: 1px solid var(--secondary); }
+
+        .btn-join {
+            background: var(--primary);
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="nav-back">
+        <a href="index.html">← بازگشت به صفحه اصلی</a>
+    </div>
+
+    <h1>📅 رویدادها و تورنمنت‌ها</h1>
+    <p style="text-align: center; color: #888; margin-bottom: 50px;">آخرین اخبار و زمان‌بندی مسابقات نکسوس</p>
+
+    <!-- Event 1 -->
+    <div class="event-card">
+        <div class="event-info">
+            <h3>تورنمنت هفتگی Valorant</h3>
+            <p>زمان: جمعه ساعت ۲۰:۰۰ | جایزه: رنک ویژه در کلن</p>
+        </div>
+        <div class="status-badge status-upcoming">در انتظار</div>
+        <a href="http://ble.ir/nexus_official" class="btn-join">ثبت نام</a>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-card" style="border-right-color: var(--secondary);">
+        <div class="event-info">
+            <h3>Clan War: Nexus vs Demons</h3>
+            <p>زمان: شنبه ساعت ۲۲:۰۰ | وضعیت: آماده سازی</p>
+        </div>
+        <div class="status-badge status-live">زنده</div>
+        <a href="http://ble.ir/nexus_official" class="btn-join" style="background: var(--secondary); color: white;">مشاهده در بله</a>
+    </div>
+
+    <!-- Empty State -->
+    <p style="text-align: center; color: #444; margin-top: 50px;">رویداد جدیدی ثبت نشده است. منتظر خبرهای هیجان‌انگیز باشید!</p>
+</div>
+
+</body>
+</html>
