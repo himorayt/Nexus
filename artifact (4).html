@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Community | NXS Official</title>
+  <!-- فونت وزیرمتن از گوگل‌فونتس -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #07090e;
+      --card-bg: rgba(18, 22, 34, 0.75);
+      --card-border: rgba(0, 242, 254, 0.15);
+      --accent-cyan: #00f2fe;
+      --accent-blue: #4facfe;
+      --accent-red: #ff3366;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(255, 51, 102, 0.06) 0%, transparent 45%);
+      color: var(--text-main);
+      font-family: 'Vazirmatn', sans-serif;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* هدر و لوگو */
+    .hero {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* دکمه‌های اقدام سریع */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: #040711;
+      box-shadow: 0 4px 18px rgba(0, 242, 254, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 242, 254, 0.4);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-main);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(0, 242, 254, 0.05);
+    }
+
+    /* کارت‌ها و بخش‌ها */
+    .section-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--accent-cyan);
+      border-radius: 2px;
+    }
+
+    /* بخش قوانین */
+    .rules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .rule-item {
+      background: rgba(255, 255, 255, 0.02);
+      border-right: 3px solid var(--accent-cyan);
+      padding: 12px 18px;
+      border-radius: 4px 10px 10px 4px;
+    }
+
+    .rule-item h4 {
+      color: var(--accent-cyan);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .rule-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* گالری مدیا */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .media-card {
+      background: #0d111b;
+      border: 1px dashed rgba(0, 242, 254, 0.25);
+      border-radius: 10px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .media-card:hover {
+      border-style: solid;
+      border-color: var(--accent-cyan);
+      color: var(--text-main);
+    }
+
+    /* کادر مدیریت */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .team-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .team-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1f2538, #0b0e18);
+      border: 1px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--accent-cyan);
+    }
+
+    .team-info h4 {
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .team-info span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #556075;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- هدر -->
+    <header class="hero">
+      <span class="badge">NXS // OFFICIAL COMMUNITY</span>
+      <h1>NEXUS COMMUNITY</h1>
+      <p>محفل گیمرهای جدی، مسابقات درون‌تیمی و مهارت‌محور. یک کامیونیتی بدون حاشیه با ساختار و استانداردهای حرفه‌ای.</p>
+      
+      <div class="actions">
+        <a href="http://ble.ir/nexus_official" target="_blank" class="btn btn-primary">عضویت در کانال بله</a>
+        <a href="#rules" class="btn btn-outline">مشاهده قوانین</a>
+      </div>
+    </header>
+
+    <!-- قوانین رسمی -->
+    <section class="section-box" id="rules">
+      <h2 class="section-title">قوانین و نظام‌نامه (Codex)</h2>
+      <div class="rules-list">
+        <div class="rule-item">
+          <h4>۱. احترام متقابل و منع رفتارهای سمی</h4>
+          <p>توهین، تحقیر، کری‌خوانی ناسالم و هرگونه رفتار توکسیک اکیداً ممنوع است. تمرکز ما روی گیم‌پلی تمیز و رفاقت است.</p>
+        </div>
+        <div class="rule-item">
+          <h4>۲. خطوط قرمز محتوایی و اخلاقی</h4>
+          <p>بحث‌های مذهبی، سیاسی، تفرقه‌افکنی قومیتی و انتشار محتوای غیراخلاقی (NSFW) باعث حذف دائم بدون تذکر خواهد شد.</p>
+        </div>
+        <div class="rule-item">
+          <h4>۳. بازی جوانمردانه (Fair Play)</h4>
+          <p>استفاده از چیت، نرم‌افزارهای غیرمجاز یا سوءاستفاده از باگ‌ها در هر بازی و مسابقه‌ای فوراً منجر به بلک‌لیست شدن خواهد شد.</p>
+        </div>
+        <div class="rule-item">
+          <h4>۴. حفظ حریم خصوصی</h4>
+          <p>مزاحمت در پی‌وی اعضا و ارسال تبلیغات و لینک‌های متفرقه تخلف سنگین محسوب می‌شود.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- گالری و هایلایت‌ها -->
+    <section class="section-box">
+      <h2 class="section-title">آرشیو و افتخارات (Media & Highlights)</h2>
+      <div class="media-grid">
+        <div class="media-card">
+          <span>🎮 اسکرین‌شات گیم‌پلی / بدوارز</span>
+        </div>
+        <div class="media-card">
+          <span>🏆 نتایج رویدادهای هفتگی</span>
+        </div>
+        <div class="media-card">
+          <span>⚔️ کلیپ‌های هایلایت اعضا</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- کادر رهبری -->
+    <section class="section-box">
+      <h2 class="section-title">کادر مدیریت (Leadership)</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">HM</div>
+          <div class="team-info">
+            <h4>Himora</h4>
+            <span>Founder & Leader (@Im_himora)</span>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">MD</div>
+          <div class="team-info">
+            <h4>Modak</h4>
+            <span>Co-Founder & Manager (@Modak)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer>
+      Nexus Community &copy; 2026 — All Rights Reserved. Tag: [NXS]
+    </footer>
+  </div>
+
+</body>
+</html>
