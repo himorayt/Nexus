@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Official Community</title>
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --secondary: #ff0055;
+            --bg: #0a0a0c;
+            --card-bg: #16161a;
+            --text: #e0e0e0;
+            --accent: #00f2ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0c 100%);
+            z-index: -1;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), var(--bg)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=2070') center/cover;
+        }
+
+        .logo-text {
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Management Grid */
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .admin-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .admin-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .role { color: var(--secondary); font-size: 0.9rem; font-weight: bold; margin-bottom: 5px; }
+        .name { font-size: 1.3rem; font-weight: bold; color: #fff; }
+
+        /* Perks & Tournaments Grid */
+        .perks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .perk-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border-right: 4px solid var(--primary);
+        }
+
+        .perk-item h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px dashed var(--primary);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text { font-size: 3rem; }
+            .title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">NEXUS</div>
+        <div class="tagline">WHERE LEGENDS ARE FORGED</div>
+    </header>
+
+    <div class="container">
+        
+        <!-- بخش مدیریت -->
+        <section id="management" class="section">
+            <h2 class="title">Management ❖</h2>
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <p class="role">LEADER</p>
+                    <p class="name">@Im_himora</p>
+                </div>
+                <div class="admin-card">
+                    <p class="role">CO-FOUNDER</p>
+                    <p class="name">@Modak</p>
+                </div>
+                <div class="admin-card">
+                    <p class="role">CONTROLLER</p>
+                    <p class="name">@amirldytuiop</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش مزایا و تورنمنت -->
+        <section id="perks" class="section">
+            <h2 class="title">Why Nexus? ❖</h2>
+            <div class="perks-container">
+                <div class="perk-item">
+                    <h3>🏆 Tournaments</h3>
+                    <p>برگزاری تورنمنت‌های منظم گیمینگ با جوایز و افتخارات ویژه برای برندگان.</p>
+                </div>
+                <div class="perk-item">
+                    <h3>📈 Growth Support</h3>
+                    <p>حمایت از کانتنت‌کریتورها و گیمرهای فعال برای رشد در پلتفرم‌های ویدئویی.</p>
+                </div>
+                <div class="perk-item">
+                    <h3>🎯 Skill Testing</h3>
+                    <p>سیستم تست تخصصی برای تشخیص سطح مهارت و ورود به لول‌های بالاتر کامیونیتی.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش تماس و عضویت -->
+        <section id="contact" class="section">
+            <div class="contact-box">
+                <h2 class="title" style="margin-bottom: 10px;">Join the Fight ❖</h2>
+                <p>برای تست دادن یا عضویت در نکسوس، با ادمین‌ها در بله در ارتباط باشید:</p>
+                <div class="btn-group">
+                    <a href="https://t.me/Modak" class="btn">Contact @Modak</a>
+                    <a href="https://t.me/amirldytuiop" class="btn">Contact @amirldytuiop</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 NEXUS COMMUNITY. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
